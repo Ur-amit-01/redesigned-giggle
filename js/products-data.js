@@ -15,11 +15,11 @@ const PRODUCTS = [
     color: "#1656D9",
     initials: "P11",
     images: [
-      "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=900&auto=format&fit=crop"
-    ],
+      "images/physics-11/cover.webp",
+      "images/physics-11/page1.webp",
+      "images/physics-11/page2.webp",
+      "images/physics-11/page3.webp"
+    ]
     short: "Mechanics, gravitation, thermodynamics & waves distilled into exam-first notes with derivations mapped to previous-year weightage.",
     description: "Our Class 11 Physics short notes compress the entire NCERT + NEET syllabus — Units & Measurements through Waves — into a crisp, exam-ready revision resource. Every derivation is simplified to the steps examiners actually test, every formula is boxed for instant recall, and every chapter opens with a high-yield summary so you know exactly what to revise first in your last 10 days.",
     included: ["16 chapters, 140+ pages of condensed notes", "Formula sheet (pull-out, printable)", "High-yield topic ranking by PYQ frequency", "150+ NCERT one-liners for prediction-based MCQs", "Diagram bank redrawn for quick memory recall"],
