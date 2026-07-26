@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart | NEET Notes Store</title>
+<meta name="description" content="Review your NEET short notes before checkout. Apply coupons, adjust quantities, and proceed to secure checkout.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231656D9%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-weight=%22800%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div class="loading-screen"><div class="loader-mark">N</div><span>Loading Notes Store</span></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">N</span><span>NEET Notes Store<small>Revise Faster. Score Higher.</small></span></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a>
+    </nav>
+    <div class="header-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="headerSearch" placeholder="Search Physics, Chemistry, Bundle…" autocomplete="off">
+      <div class="search-suggest" id="headerSuggest"></div>
+    </div>
+    <div class="header-icons">
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+      </button>
+      <a href="shop.html#wishlist" class="icon-btn hide-xs" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="icon-count" data-wishlist-count style="display:none;">0</span></a>
+      <a href="cart.html" class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span class="icon-count" data-cart-count style="display:none;">0</span></a>
+      <a href="checkout.html" class="icon-btn hide-xs" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-panel">
+  <div class="mobile-panel-head"><span class="logo"><span class="logo-mark">N</span>NEET Notes</span><button class="mobile-panel-close icon-btn" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+  <div class="mobile-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="text" id="mobileSearch" placeholder="Search notes…"></div>
+  <div class="search-suggest" id="mobileSuggest" style="position:static;"></div>
+  <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="cart.html">Cart</a>
+</div>
+
+<div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Cart</span></div></div>
+
+<section class="section-tight" style="padding-top:8px;">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:28px;text-align:left;max-width:none;">
+      <h2>Your Cart</h2>
+      <p>Review your notes before heading to checkout.</p>
+    </div>
+
+    <div class="cart-layout">
+      <div>
+        <div id="cartList"></div>
+      </div>
+
+      <aside class="summary-card hidden" id="cartSummaryWrap">
+        <h3>Order Summary</h3>
+        <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">₹0</span></div>
+        <div class="summary-row hidden" id="sumDiscountRow"><span class="off">Coupon Discount</span><span class="off" id="sumDiscount">− ₹0</span></div>
+        <div class="summary-row total"><span>Total</span><span id="sumTotal">₹0</span></div>
+        <div class="coupon-box">
+          <input type="text" id="couponInput" placeholder="Enter coupon code">
+          <button class="btn btn-blue btn-sm" id="couponApply">Apply</button>
+        </div>
+        <div class="coupon-msg" id="couponMsg"></div>
+        <a href="checkout.html" class="btn btn-orange btn-block btn-lg">Proceed to Checkout</a>
+        <div class="trust-strip">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>256-bit secure checkout</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Instant download after payment</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Lifetime access, no expiry</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="cart-empty hidden" id="cartEmpty">
+      <div class="ic">🛒</div>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't added any notes yet. Let's fix that.</p>
+      <a href="shop.html" class="btn btn-blue btn-lg">Browse Notes</a>
+    </div>
+
+    <div class="recommend-strip">
+      <div class="section-head reveal" style="margin-bottom:22px;text-align:left;max-width:none;"><span class="eyebrow">You Might Also Like</span><h2>Complete Your Revision</h2></div>
+      <div class="grid-4" id="cartRecommend"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo" style="color:#fff;"><span class="logo-mark">N</span>NEET Notes Store</span>
+        <p>Premium, exam-focused NEET short notes for Physics &amp; Chemistry. Revise faster, score higher.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.5 6.2a2.8 2.8 0 00-2-2C18.9 3.7 12 3.7 12 3.7s-6.9 0-8.5.5a2.8 2.8 0 00-2 2A29 29 0 001 12a29 29 0 00.5 5.8 2.8 2.8 0 002 2c1.6.5 8.5.5 8.5.5s6.9 0 8.5-.5a2.8 2.8 0 002-2A29 29 0 0023 12a29 29 0 00-.5-5.8z"/><path d="M9.8 15.5l6-3.5-6-3.5z"/></svg></a>
+          <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Shop</h4><a href="shop.html">All Notes</a><a href="product-complete-bundle.html">Complete Bundle</a><a href="product-physics-11.html">Physics Class 11</a><a href="product-physics-12.html">Physics Class 12</a><a href="product-organic-chemistry.html">Organic Chemistry</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="cart.html">Cart</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="refund-policy.html">Refund Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
+      <div class="footer-col"><h4>We accept</h4><div class="footer-badges"><div>🔒 100% Secure Checkout</div><div>⚡ Instant Delivery</div><div>💬 Priority Support</div></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 NEET Notes Store. All rights reserved.</span><div class="footer-pay"><span>UPI</span><span>Cards</span><span>Razorpay</span><span>Net Banking</span></div></div>
+  </div>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+  <a href="shop.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>Shop</a>
+  <a href="shop.html" style="position:relative;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>Wishlist<span class="bn-count" data-wishlist-count style="display:none;">0</span></a>
+  <a href="cart.html" class="active" style="position:relative;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>Cart<span class="bn-count" data-cart-count style="display:none;">0</span></a>
+  <a href="checkout.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Account</a>
+</nav>
+
+<button class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="js/products-data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/render.js"></script>
+<script src="js/quickview.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart-page.js"></script>
+<style>.hidden{display:none !important;}</style>
+</body>
+</html>
